@@ -50,7 +50,7 @@ public:
 
     void DeleteHeadNode()
     {
-        Node *tempNode = Head;
+        Node *tempNode = Headuuuuuuuujj;
         Head = tempNode->next_link;
         delete tempNode;
     }
@@ -74,27 +74,14 @@ public:
             }
         }
     }
-    void DeleteNodeNumber(int count)
+    void DeleteNodeNumber(int data)
     {
-        int counter = 0;
-        Node *tempNode = Head;
-        while (true)
-        {
-            if (counter == count - 1)
-            {
-                
-                tempNode->next_link = tempNode->next_link->next_link;
-                delete tempNode;
-
-                break;
-            }
-            else
-            {
-                tempNode = tempNode->next_link;
-                counter++;
-            }
-        }
+        Node *ptr = Head;
+        while(){
+    
+        }       
     }
+
 };
 
 int main()
