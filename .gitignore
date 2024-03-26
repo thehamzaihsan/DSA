@@ -1,0 +1,10 @@
+# Ignore .exe files
+*.exe
+
+# Ignore .o files
+*.o
+
+# Ignore Linux executables
+a.out
+# Ignore all executables
+*~
