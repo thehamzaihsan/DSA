@@ -8,3 +8,5 @@
 a.out
 # Ignore all executables
 *~
+# Remove all executables
+find . -type f -executable -delete
