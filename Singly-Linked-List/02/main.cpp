@@ -35,9 +35,10 @@ public:
         Node *tempPointer = Head;
         while (tempPointer != NULL)
         {
-            cout << tempPointer->data << endl;
+            cout << tempPointer->data << " ";
             tempPointer = tempPointer->next_link;
         }
+        cout << endl;
     }
 
     void InsertNodeStart(int data)
@@ -50,7 +51,7 @@ public:
 
     void DeleteHeadNode()
     {
-        Node *tempNode = Headuuuuuuuujj;
+        Node *tempNode = new Node;
         Head = tempNode->next_link;
         delete tempNode;
     }
@@ -77,20 +78,54 @@ public:
     void DeleteNodeNumber(int data)
     {
         Node *ptr = Head;
-        while(){
-    
-        }       
     }
-
+    void InsertArbitrary(int key, int data)
+    {
+        Node *temp = new Node;
+        temp->data = data;
+        Node *ptr = Head;
+        while (true)
+        {
+            if (ptr->data == key)
+            {
+                temp->next_link = ptr->next_link;
+                ptr->next_link = temp;
+                break;
+            }
+            else
+            {
+                ptr = ptr->next_link;
+            }
+        }
+    }
 };
+
+bool Search(Node *head, int key)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->data == key)
+        {
+            cout << "Found" << endl;
+            return true;
+        }
+        temp = temp->next_link;
+    }
+    cout << "Not Found" << endl;
+    return false;
+}
 
 int main()
 {
+
     LinkedList myList;
     myList.InsertNodeEnd(8);
     myList.InsertNodeEnd(10);
     myList.InsertNodeEnd(11);
-    myList.InsertNodeStart(7);
-    myList.DeleteNodeNumber(2);
+    myList.InsertNodeEnd(12);
+    myList.InsertNodeEnd(13);
+    myList.Traverse();
+    myList.InsertArbitrary(10, 9);
     myList.Traverse();
 }
