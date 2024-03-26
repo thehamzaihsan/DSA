@@ -2,10 +2,11 @@
 #include "stack.h"
 using namespace std;
 
+
 int main(){
     Stack s;
     string infix;
-    cout << "Enter the infix expression: ";
+    cout << "Enter the hinfix expression: ";
     cin >> infix;
     for (int i = 0; i < infix.length(); i++)
     {
@@ -13,7 +14,7 @@ int main(){
             s.push('(');
         }
         else if(infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/'){
-            if(prcd())
+            
         }
        
     }
