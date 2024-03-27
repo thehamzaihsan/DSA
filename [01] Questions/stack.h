@@ -5,8 +5,8 @@ class Node
 {
 public:
     Node *next;
-    int data;
-    Node(int data)
+    char data;
+    Node(char data)
     {
         this->data = data;
     }
@@ -21,12 +21,14 @@ public:
     {
         head = NULL;
     }
-    void push(int data);
-    void pop();
+    void push(char data);
+    char pop();
     void display();
+    char top();
+    bool isEmpty();
 };
 
-void Stack::push(int data)
+void Stack::push(char data)
 {
     if (head == NULL)
     {
@@ -42,18 +44,20 @@ void Stack::push(int data)
     }
 }
 
-void Stack::pop()
+char Stack::pop()
 {
     if (head == NULL)
     {
         cout << "UNDERFLOW";
+        return 'n';
     }
     else
     {
-
         Node *tempNode = head;
         head = tempNode->next;
+        char temp = tempNode->data;
         delete tempNode;
+        return temp;
     }
 }
 
@@ -66,4 +70,25 @@ void Stack::display()
         tempPointer = tempPointer->next;
     }
     cout << endl;
+}
+
+char Stack::top()
+{
+    if (!isEmpty())
+    {
+        return head->data;
+    }
+    else
+    {
+        return '$';
+    }
+}
+
+bool Stack::isEmpty()
+{
+    if (head == NULL)
+    {
+        return true;
+    }
+    return false;
 }
