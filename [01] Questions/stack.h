@@ -5,12 +5,13 @@ class Node
 {
 public:
     Node *next;
-    char data;
-    Node(char data)
+    int data;
+    Node(int data)
     {
         this->data = data;
     }
     Node();
+
 };
 
 class Stack
@@ -21,14 +22,20 @@ public:
     {
         head = NULL;
     }
-    void push(char data);
-    char pop();
+    void push(int data);
+    int pop();
     void display();
-    char top();
-    bool isEmpty();
+    bool isEmpty(){
+        if(head == NULL){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 };
 
-void Stack::push(char data)
+void Stack::push(int data)
 {
     if (head == NULL)
     {
@@ -44,20 +51,21 @@ void Stack::push(char data)
     }
 }
 
-char Stack::pop()
+int Stack::pop()
 {
     if (head == NULL)
     {
         cout << "UNDERFLOW";
-        return 'n';
+        return 0;
     }
     else
     {
+
         Node *tempNode = head;
         head = tempNode->next;
-        char temp = tempNode->data;
+        int x = tempNode->data;
         delete tempNode;
-        return temp;
+        return x;
     }
 }
 
@@ -70,25 +78,4 @@ void Stack::display()
         tempPointer = tempPointer->next;
     }
     cout << endl;
-}
-
-char Stack::top()
-{
-    if (!isEmpty())
-    {
-        return head->data;
-    }
-    else
-    {
-        return '$';
-    }
-}
-
-bool Stack::isEmpty()
-{
-    if (head == NULL)
-    {
-        return true;
-    }
-    return false;
 }

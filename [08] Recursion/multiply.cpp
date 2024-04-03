@@ -12,5 +12,6 @@ int Multiply(int a[], int size)
 int main()
 {
     int a[5] = {1, 2, 3, 4, 5};
-    cout << Multiply(a, 4);
+    cout <<  Multiply(a, 4);
+    cout << endl;
 }

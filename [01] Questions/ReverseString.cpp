@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "stack.h"
+#include "stackchar.h"
 int main(){
     string s;
     cout << "Enter a string: ";

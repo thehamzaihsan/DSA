@@ -12,5 +12,5 @@ long int factorial(int n){
 
 int main()
 {
-    cout << "20 factorial is: " << factorial(20) << endl;
+    cout << factorial(20) << endl;
 }

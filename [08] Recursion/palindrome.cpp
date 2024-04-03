@@ -13,6 +13,14 @@ bool isPalindrome(string s , int start , int end){
     }
 }
 int main(){
-    string s = "hamza";
-    cout << isPalindrome(s, 0 , s.length() - 1);
+    string s;
+    cout << "Enter a string to check if it's a palindrome: ";
+    cin >> s;
+    if(isPalindrome(s, 0 , s.length() - 1)){
+        cout << s << " is a palindrome.";
+    } else {
+        cout << s << " is not a palindrome.";
+    }
+    cout << endl;
+    return 0;
 }
