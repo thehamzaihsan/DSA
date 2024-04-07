@@ -12,33 +12,27 @@ using namespace std;
 // struct ListNode {
 //     int val;
 //     ListNode *next;
-//     ListNode() : val(0), next(nullptr) {}
-//     ListNode(int x) : val(x), next(nullptr) {}
+//     ListNode() : val(0), next(NULL) {}
+//     ListNode(int x) : val(x), next(NULL) {}
 //     ListNode(int x, ListNode *next) : val(x), next(next) {}
 // };
 
-class Solution {
+class Solution
+{
 public:
-     ListNode* reverse(ListNode* node , ListNode* head)
+    ListNode *reverseList(ListNode *head)
     {
-        if (node == NULL)
-            return NULL;
-        if (node->next == NULL) {
-            head = node;
-            return node;
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
+        ListNode *nexts = head;
+        while(curr != nullptr){
+            nexts = nexts->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nexts;
         }
-        ListNode* node1 = reverse(node->next , head);
-        node1->next = node;
-        node->next = NULL;
-        return node;
-    }
-    ListNode* reverseList(ListNode* head) {
-        ListNode *ptr = head;
-        ListNode *x = head;
-        reverse(head , head);
+        return prev;
         
-        return x;
     }
 };
 // @lc code=end
-
