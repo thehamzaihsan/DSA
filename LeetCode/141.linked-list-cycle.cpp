@@ -1,3 +1,11 @@
+struct ListNode {
+     int val;
+      ListNode *next;
+      ListNode() : val(0), next(nullptr) {}
+      ListNode(int x) : val(x), next(nullptr) {}
+      ListNode(int x, ListNode *next) : val(x), next(next) {}
+  };
+
 /*
  * @lc app=leetcode id=141 lang=cpp
  *
@@ -10,20 +18,21 @@
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
+
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if(head == NULL){
+        if(head == nullptr){
             return false;
         }
         ListNode *slow = head;
         ListNode *fast = head;
 
         while(true){
-            if(fast->next == NULL || fast->next->next == NULL || fast == NULL){
+            if(fast->next == nullptr || fast->next->next == nullptr || fast == nullptr){
                 return false;
             }
             else{

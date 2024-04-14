@@ -6,6 +6,7 @@
 
 // @lc code=start
 
+#include <istream>
 int init = [] {
     ios_base::sync_with_stdio(false);  cin.tie(nullptr);
     ofstream out("user.out");
