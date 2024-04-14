@@ -21,43 +21,25 @@ class Solution
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n)
     {
+        //starting indexing from 1
+        ListNode *temp = head;
         int count = 0;
-        ListNode *ptr = head;
-        while (ptr != NULL)
-        {
+        while (temp != nullptr){
             count++;
-            ptr = ptr->next;
-
+            temp = temp->next; 
         }
-        int deletethis = 0;
-        if (count != n)
-        {
-            deletethis = count - n;
-        }
-        else if(count == 1){
-            return NULL;
-        }
-        else{
-            deletethis = 1;
-        }
-       
-        cout << "count: " << count << endl;
-        cout << "deletethis: " << deletethis << endl;
-
-        ListNode *nptr = head;
-        count = 1;
-        while (nptr != NULL)
-        {
-            cout << nptr->val;
-            if (count == deletethis)
-            {
-                cout << "deleted index: " << count;
-                ListNode *temp = nptr->next;
-                nptr->next = nptr->next->next;
-                delete temp;
+        temp = head;
+        int deletecount = count - n;
+        cout << deletecount;
+        count = 0;
+        while(temp != nullptr){
+            count++;
+            if(count == deletecount){
+                ListNode *ttemp = temp->next;
+                temp->next = temp->next->next;
+                delete ttemp;
             }
-            count++;
-            nptr = nptr->next;
+            temp = temp->next;
         }
         return head;
     }

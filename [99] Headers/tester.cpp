@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-#include "./doubly-circular-list.h"
-
+// #include "./doubly-circular-list.h"
+#include "./circular-list.h"
 void swap(int val1, int val2, Node *head)
 {
     Node *ptr1 = head;
@@ -30,6 +30,7 @@ void swap(int val1, int val2, Node *head)
     Node *temp1, *temp2;
     temp1 = ptr1->next;
     temp2 = ptr1->prev;
+    //NOT ADJACENT
     if (ptr1->next != ptr2 && ptr1->prev != ptr2)
     {
 
@@ -45,6 +46,7 @@ void swap(int val1, int val2, Node *head)
         temp2 = ptr1->prev;
     }
     else
+    //ADJACENT
     {
         ptr1->prev = ptr2;
         ptr1->next = ptr2->next;
@@ -58,12 +60,8 @@ void swap(int val1, int val2, Node *head)
 
 int main()
 {
-    DoublyCircular list;
-    list.Insert(10);
-    list.Insert(20);
-    list.Insert(30);
-    list.Insert(40);
-    cout << endl;
-    swap(10, 30, list.head);
-    list.Traverse();
+    CircularList List;
+    List.insert(10);
+    List.Delete();
+    List.Traverse();
 }

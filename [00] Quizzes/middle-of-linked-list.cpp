@@ -19,3 +19,5 @@ int main(){
     Node *middle = findmiddle(list.Head);
     cout << middle->data;
 }
+
+ 

@@ -46,6 +46,7 @@ int main()
     cout << "Enter the infix expression: ";
     cin >> infix;
     cout << "postfix: ";
+    string postfix = "";
     for (int i = 0; i < infix.length(); i++)
     {
         if (infix[i] == '(')
@@ -64,9 +65,10 @@ int main()
             }
             else
             {
-                while (operatorPrecedence(s.top(), infix[i]) && s.top() != '$')
+                while (operatorPrecedence(s.top(), infix[i]))
                 {   
-                    cout << s.pop();
+
+                    postfix+= s.pop();
                 }
                 s.push(infix[i]);
             }
@@ -75,20 +77,24 @@ int main()
         {
             while (s.top() != '(')
             {
-                cout << s.pop();
+
+                postfix+= s.pop();
             }
+
             s.pop();
+        
         }
         else
         {
-            cout << infix[i] << " ";
+            postfix+= infix[i];
         }
     }
 
     while (!s.isEmpty())
     {
-        cout << s.pop();
+       postfix+=s.pop();
     }
 
+    cout << postfix;
     cout << endl;
 }

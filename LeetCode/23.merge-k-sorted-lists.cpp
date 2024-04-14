@@ -18,7 +18,9 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
+        ListNode* Head  = nullptr;
         
+        return Head;
     }
 };
 // @lc code=end
