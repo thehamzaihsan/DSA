@@ -77,7 +77,6 @@ int main()
         {
             while (s.top() != '(')
             {
-
                 postfix+= s.pop();
             }
 
