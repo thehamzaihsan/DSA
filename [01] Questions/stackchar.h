@@ -1,23 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class Node
-{
-public:
-    Node *next;
-    char data;
-    Node(char data)
-    {
-        this->data = data;
-    }
-    Node();
-};
 
-class Stack
+
+class Stackc
 {
 public:
     Node *head;
-    Stack()
+    Stackc()
     {
         head = NULL;
     }
@@ -28,7 +18,7 @@ public:
     bool isEmpty();
 };
 
-void Stack::push(char data)
+void Stackc::push(char data)
 {
     if (head == NULL)
     {
@@ -44,7 +34,7 @@ void Stack::push(char data)
     }
 }
 
-char Stack::pop()
+char Stackc::pop()
 {
     if (head == NULL)
     {
@@ -61,7 +51,7 @@ char Stack::pop()
     }
 }
 
-void Stack::display()
+void Stackc::display()
 {
     Node *tempPointer = head;
     while (tempPointer != NULL)
@@ -72,7 +62,7 @@ void Stack::display()
     cout << endl;
 }
 
-char Stack::top()
+char Stackc::top()
 {
     if (!isEmpty())
     {
@@ -84,7 +74,7 @@ char Stack::top()
     }
 }
 
-bool Stack::isEmpty()
+bool Stackc::isEmpty()
 {
     if (head == NULL)
     {

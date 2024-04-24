@@ -12,4 +12,4 @@ delete_executables() {
     done
 }
 
-delete_executables "/media/hamzaihsan/New Volume/projects/DSA"
+delete_executables "/DSA"

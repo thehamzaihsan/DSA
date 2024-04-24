@@ -1,50 +1,95 @@
 #include <iostream>
+#include "Node.h"
 #include "stackchar.h"
+#include "stack.h"
 using namespace std;
 
-//+*
+
 bool operatorPrecedence(char op1, char op2)
 {
-    // is op1>op2
-    if(op1 == '*' && op2 == '/'){
+    int weightOp1, weightOp2;
+
+    switch(op1) {
+        case '+':
+        case '-':
+            weightOp1 = 1;
+            break;
+        case '*':
+        case '/':
+            weightOp1 = 2;
+            break;
+        default:
+            weightOp1 = -1; // for invalid operators
+    }
+
+    switch(op2) {
+    
+        case '+':
+        case '-':
+            weightOp2 = 1;
+            break;
+        case '*':
+        case '/':
+            weightOp2 = 2;
+            break;
+        default:
+            weightOp2 = -1; // for invalid operators
+    }
+
+    // if operators have equal precedence, return false
+    if(weightOp1 == weightOp2) {
         return false;
     }
-    if (op1 == '*' || op1 == '/')
+
+    return weightOp1 > weightOp2;
+}
+
+int evaluate(string str){
+    Stack s;
+    for (int i = 0; i < str.size(); i++)
     {
-        return true;
+        if(str[i] >= '0' && str[i] <= '9'){
+            int integer = str[i] - '0';
+            s.push(integer);
+        }
+        else{
+                int op1 = s.pop();
+                int op2 = s.pop();
+            if(str[i] == '+'){
+                s.push(op1 + op2);
+            }
+              if(str[i] == '-'){
+                s.push(op1 - op2);
+            }
+              if(str[i] == '*'){
+                s.push(op1 * op2);
+            }
+              if(str[i] == '/'){
+                s.push(op1 / op2);
+            }
+        }
     }
-    else if (op2 == '+' || op2 == '-')
-    {
-        return true;
+    
+    int answer = s.pop();
+    if(!s.isEmpty()){
+        cout << "INVALID EXPRESSION";
+        return -1;
     }
-    else
-    {
-        return false;
+    else{
+        return answer;
     }
 }
 
-float Evaluate(float a , float b , char oper){
-    if(oper == '+'){
-        return a+b;
-    }
-    if(oper == '-'){
-        return a-b;
-    }
-    if(oper == '*'){
-        return a*b;
-    }
-    if(oper == '/'){
-        return a/b;
-    }
-    return 0;
-}
+
+
+
 
 int main()
 {
-    Stack s;
-    string infix = "2*3+4";
+    Stackc s;
+    string infix;
     cout << "Enter the infix expression: ";
-    cin >> infix;
+    getline(cin,infix);
     cout << "postfix: ";
     string postfix = "";
     for (int i = 0; i < infix.length(); i++)
@@ -85,7 +130,7 @@ int main()
         }
         else
         {
-            postfix+= infix[i];
+            postfix += infix[i];
         }
     }
 
@@ -95,5 +140,8 @@ int main()
     }
 
     cout << postfix;
+    cout << endl;
+    cout << "Evaluate: ";
+    cout << evaluate(postfix);
     cout << endl;
 }
