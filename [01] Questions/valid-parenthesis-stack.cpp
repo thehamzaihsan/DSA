@@ -47,5 +47,14 @@
     }
 
     int main(){
-        cout << isValid("{(a+b}");
+        string str;
+        cout << "Enter String";
+        cin >> str;
+        if(isValid(str)){
+            cout << "Balanced";
+        }
+        else{
+            cout << "Not Balanced";
+        }
+        cout << endl;
     }

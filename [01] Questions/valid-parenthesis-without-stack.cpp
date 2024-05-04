@@ -4,6 +4,7 @@
 using namespace std;
 int main()
 {
+    cout << endl;
     string str;
     int count = 0;
     cin >> str;

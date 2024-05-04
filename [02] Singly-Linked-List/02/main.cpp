@@ -98,6 +98,7 @@ public:
             }
         }
     }
+
 };
 
 bool Search(Node *head, int key)
@@ -116,6 +117,28 @@ bool Search(Node *head, int key)
     return false;
 }
 
+void TraverseFIFO(Node *head){
+    Node *temp = head;
+    if(temp == NULL){
+        return;
+    }
+    else{
+        cout << temp->data << " ";
+        TraverseFIFO(temp->next_link);
+    }
+}
+
+void TraverseReverse(Node *head){
+    Node *temp = head;
+    if(temp == NULL){
+        return;
+    }
+    else{
+        TraverseReverse(temp->next_link);
+        cout << temp->data << " ";
+    }
+}
+
 int main()
 {
 
@@ -125,7 +148,12 @@ int main()
     myList.InsertNodeEnd(11);
     myList.InsertNodeEnd(12);
     myList.InsertNodeEnd(13);
+    cout << "Traversing the list: ";
     myList.Traverse();
-    myList.InsertArbitrary(10, 9);
-    myList.Traverse();
+    cout << "Traversing FIFO: ";
+    TraverseFIFO(myList.Head);
+    cout << endl;
+    cout << "Traversing Reverse: ";
+    TraverseReverse(myList.Head);
+    cout << endl;
 }
