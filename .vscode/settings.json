@@ -53,5 +53,6 @@
   "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
     "clang-diagnostic-error"
   ],
-  "C_Cpp.default.compilerPath": "/usr/bin/g++-11"
+  "C_Cpp.default.compilerPath": "/usr/bin/g++-11",
+  "cmake.sourceDirectory": "/home/hamzaihsan/DSA/[98] SFML"
 }

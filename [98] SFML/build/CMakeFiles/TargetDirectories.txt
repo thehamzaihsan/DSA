@@ -1,0 +1,7 @@
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/SFMLBoilerplate.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/edit_cache.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/rebuild_cache.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/list_install_components.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/install.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/install/local.dir
+/home/hamzaihsan/DSA/[98] SFML/build/CMakeFiles/install/strip.dir
