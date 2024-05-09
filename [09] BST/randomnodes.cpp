@@ -48,4 +48,5 @@ int main()
     tree.root->left->right = tree.insert(5);
     tree.root->right->left = tree.insert(6);
     tree.Traverse(tree.root);
+    cout << endl;
 }

@@ -6,22 +6,38 @@ using namespace std;
 
 int main()
 {
-   BinarySearchTree BST;
-   BST.Insert(14);
-   BST.Insert(2);
-   BST.Insert(1);
-   BST.Insert(3);
-   BST.Insert(11);
-   BST.Insert(10);
-   BST.Insert(7);
-   BST.Insert(30);
-   BST.Insert(40);
-   BST.PostOrderTraverse(BST.root);
-   // BST.LeafNodes(BST.root);
-   // if(BST.Search(BST.root , 8) != nullptr){
-   //    cout << "Found";
-   // }
-   // else{
-   //    cout << "Not Found";
-   // }
+   
+   BinarySearchTree tree;
+   int choice;
+   do
+   {
+      cout << "1. Insert\n2. Count Leaf Nodes\n3. Count Nodes\n4. Count Non-Leaf Nodes\n5. Exit\n";
+      cout << "Enter your choice: ";
+      cin >> choice;
+      switch (choice)
+      {
+      case 1:
+         int data;
+         cout << "Enter data: ";
+         cin >> data;
+         tree.Insert(data);
+         break;
+      case 2:
+         cout << "Leaf Nodes: " << tree.countLeafNodesRecursive(tree.root) << endl;
+         break;
+      case 3:
+         cout << "Nodes: " << tree.sizeRecursive(tree.root) << endl;
+         break;
+      case 4:
+         cout << "Non-Leaf Nodes: " << tree.countNonLeafNodesRecursive(tree.root) << endl;
+         break;
+      case 5:
+         cout << "Exiting...";
+         break;
+      default:
+         cout << "Invalid choice\n";
+         break;
+      }
+   } while (choice != 5);
+  
 }

@@ -10,22 +10,6 @@ public:
     void Delete();
     BinaryTreeNode *Search(BinaryTreeNode *root, int key);
     void Traverse(BinaryTreeNode *root);
-    // int LeafNodes(BinaryTreeNode *root, int count = 0)
-    // {
-
-    //     if (root == nullptr)
-    //     {
-    //         return 0;
-    //     }
-    //     if (left == nullptr && right == nullptr)
-    //     {
-    //         count++;
-    //     }
-    //     LeafNodes(root->left, count);
-    //     LeafNodes(root->right, count);
-
-    //     return count;
-    // }
     bool isEmpty()
     {
         if (root == nullptr)
@@ -66,6 +50,35 @@ public:
         InOrderTraverse(root->left);
         cout << root->val << " ";
         InOrderTraverse(root->right);
+    }
+
+    int countLeafNodesRecursive(BinaryTreeNode *root)
+    {
+        if (root == nullptr)
+        {
+            return 0;
+        }
+        if (root->left == nullptr && root->right == nullptr)
+        {
+            return 1;
+        }
+        return countLeafNodesRecursive(root->left) + countLeafNodesRecursive(root->right);
+    }
+    int countNonLeafNodesRecursive(BinaryTreeNode *root)
+    {
+        if (root == nullptr || (root->left == nullptr && root->right == nullptr))
+        {
+            return 0;
+        }
+        return 1 + countNonLeafNodesRecursive(root->left) +  countNonLeafNodesRecursive(root->right);
+    }
+    int sizeRecursive(BinaryTreeNode *root)
+    {
+        if (root == nullptr)
+        {
+            return 0;
+        }
+        return 1 + sizeRecursive(root->left) + sizeRecursive(root->right);
     }
 };
 
