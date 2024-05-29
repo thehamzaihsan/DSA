@@ -139,21 +139,36 @@ void TraverseReverse(Node *head){
     }
 }
 
+void Sort(Node *Head){
+    Node *temp = Head;
+    while(temp != nullptr){
+        Node *temp2 = temp->next_link;
+        while(temp2 != nullptr){
+            if(temp->data > temp2->data){
+                int tempData = temp->data;
+                temp->data = temp2->data;
+                temp2->data = tempData;
+            }
+            temp2 = temp2->next_link;
+        }
+        temp = temp->next_link;
+    }
+}
+
+
+
 int main()
 {
 
     LinkedList myList;
     myList.InsertNodeEnd(8);
+    myList.InsertNodeEnd(12);
     myList.InsertNodeEnd(10);
     myList.InsertNodeEnd(11);
-    myList.InsertNodeEnd(12);
     myList.InsertNodeEnd(13);
-    cout << "Traversing the list: ";
+    myList.InsertNodeEnd(9);
     myList.Traverse();
-    cout << "Traversing FIFO: ";
-    TraverseFIFO(myList.Head);
-    cout << endl;
-    cout << "Traversing Reverse: ";
-    TraverseReverse(myList.Head);
+    Sort(myList.Head);
+    myList.Traverse();
     cout << endl;
 }

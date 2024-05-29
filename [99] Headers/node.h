@@ -1,17 +1,22 @@
  
+template<typename T>
 struct ListNode{
-    int val;
-    ListNode *next;
+    T val;
+    ListNode<T> *next;
 };
 
+template<typename T>
 struct DoublyListNode{
-    int val;
-    DoublyListNode *next;
-    DoublyListNode *prev;
+    T val;
+    DoublyListNode<T> *next;
+    DoublyListNode<T> *prev;
 };
 
+template<typename T>
 struct BinaryTreeNode{
-    int val;
-    BinaryTreeNode *left;
-    BinaryTreeNode *right;
+    T val;
+    BinaryTreeNode<T> *left;
+    BinaryTreeNode<T> *right;
+    BinaryTreeNode(T x) : val(x), left(nullptr), right(nullptr) {}
+    BinaryTreeNode() : val(0), left(nullptr), right(nullptr) {}
 };
