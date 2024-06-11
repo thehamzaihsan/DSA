@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main(){
-   // Graph g(5, 5);
+   // GraphMatrix g(5, 5);
    // g.addedges({0, 1});
    // g.addedges({0, 2});
    // g.addedges({1, 2});
@@ -21,6 +21,7 @@ int main(){
    g.addedges({1, 2});
    g.addedges({1, 3});
    g.display();
+   
 
    return 0;
 }

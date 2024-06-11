@@ -42,13 +42,13 @@ class GraphList
         }
         temp->next = newNode;
 
-         ListNode<int> *newNode_t = new ListNode<int>;
-        newNode_t->val = location[0];
-        newNode_t->next = nullptr;
-        ListNode<int> *temp_t = &adj[location[1]];
-        while(temp_t->next != nullptr){
-            temp_t = temp_t->next;
-        }
-        temp_t->next = newNode_t;
+        //  ListNode<int> *newNode_t = new ListNode<int>;
+        // newNode_t->val = location[0];
+        // newNode_t->next = nullptr;
+        // ListNode<int> *temp_t = &adj[location[1]];
+        // while(temp_t->next != nullptr){
+        //     temp_t = temp_t->next;
+        // }
+        // temp_t->next = newNode_t;
     }
 };
