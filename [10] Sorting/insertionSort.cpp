@@ -3,15 +3,20 @@ using namespace std;
 
 int *insertionSort(int list[], int n)
 {
+    //for i->n
     for (int i = 1; i < n; i++)
     {
       
+        //for i-1<-0
         for (int  j = i-1; j >= 0; j--)
         {
+            //if list[j] > list[i]
             if(list[j] > list[i]){
+                //swap list[j] and list[i]
                 int temp = list[j];
                 list[j] = list[i];
                 list[i] = temp;
+
                 i--;
             }
             else{
