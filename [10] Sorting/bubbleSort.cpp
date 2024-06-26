@@ -3,20 +3,19 @@ using namespace std;
 
 int *bubbleSort(int list[], int n)
 {
-
     for (int i = 0; i < n; i++)
     {
-
-        for (int j = 0; j < n - i - 1; j++)
+        for (int j = 0; j < n; j++)
         {
-            if (list[j] > list[j + 1])
-            {
-                int temp = *(list + j);
-                *(list + j) = *(list + j + 1);
-                *(list + j + 1) = temp;
+            if(list[j] > list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
             }
         }
+        
     }
+    
     return list;
 }
 
